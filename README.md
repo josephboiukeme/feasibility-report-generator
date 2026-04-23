@@ -8,6 +8,12 @@ Tkinter desktop application for generating and refining feasibility report conte
 - `OPENAI_API_KEY` environment variable
 - `Feasibility_Report_Word_Template.docx` in the repository root
 
+Example:
+
+```bash
+export OPENAI_API_KEY="your_key_here"
+```
+
 Install dependencies:
 
 ```bash

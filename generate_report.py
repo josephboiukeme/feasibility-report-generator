@@ -76,7 +76,10 @@ class FeasibilityReportApp:
         self.root.title("Feasibility Report Generator")
         self.root.geometry("1200x900")
 
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", "YOUR_OPENAI_API_KEY"))
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise RuntimeError("OPENAI_API_KEY environment variable is required.")
+        self.client = OpenAI(api_key=api_key)
         self.generated_data = {section: "" for section in SECTIONS}
         self.approved_sections = set()
 
